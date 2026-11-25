@@ -1,9 +1,9 @@
 alembic round trip - real terminal output
 ==============================================================
 
-Captured  : 2026-11-25T06:43:42Z
+Captured  : 2026-11-25T06:55:07Z
 Python    : 3.11.9
-Alembic   : alembic 1.18.4
+Alembic   : alembic 1.20.1
 Database  : PostgreSQL 16.2
 Command   : see README, section "Running the migration round trip"
 

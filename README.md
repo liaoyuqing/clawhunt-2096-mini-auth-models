@@ -11,7 +11,7 @@ acceptance criteria quoted in each section below.
 | Migration | `migrations/versions/0016_mini_auth.py` (up and down) |
 | Seed | `migrations/seed_mini_auth.py`: 10 users, 6 applications, 12 login events |
 | Tests | `tests/test_mini_auth_models.py`, 20 cases |
-| Verified with | Python 3.11.9, SQLAlchemy 2.0.49, Alembic 1.18.4, psycopg 3.2.3, pytest 9.2.0, PostgreSQL 16.2 |
+| Verified with | Python 3.11.9, SQLAlchemy 2.0.58, Alembic 1.20.1, psycopg 3.3.9, pytest 9.2.0, PostgreSQL 16.2 |
 
 ## What problem the schema solves
 
