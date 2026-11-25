@@ -1,0 +1,18 @@
+# Local database clusters and scratch files never belong in the repository.
+_pgdata/
+_pgdata*/
+
+# Server logs, but not the evidence transcripts committed under docs/checks/.
+*.log
+!docs/checks/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local run artefacts
+_seed1.json
+_seed2.json

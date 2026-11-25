@@ -1,0 +1,30 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0 -- E:\AI接单\Clawhunt\delivery\work\2096\_venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\AI接单\Clawhunt\delivery\work\2096\repo
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 20 items
+
+tests/test_mini_auth_models.py::test_migration_roundtrip_and_no_drift PASSED [  5%]
+tests/test_mini_auth_models.py::test_unified_columns_present_on_all_three_tables PASSED [ 10%]
+tests/test_mini_auth_models.py::test_partial_unique_index_definitions PASSED [ 15%]
+tests/test_mini_auth_models.py::test_duplicate_openid_same_org_raises_23505 PASSED [ 20%]
+tests/test_mini_auth_models.py::test_same_openid_in_another_org_is_allowed PASSED [ 25%]
+tests/test_mini_auth_models.py::test_soft_deleted_openid_can_be_reused PASSED [ 30%]
+tests/test_mini_auth_models.py::test_ten_concurrent_inserts_leave_exactly_one_row PASSED [ 35%]
+tests/test_mini_auth_models.py::test_second_submitted_application_rejected PASSED [ 40%]
+tests/test_mini_auth_models.py::test_decision_frees_the_slot_for_a_new_application PASSED [ 45%]
+tests/test_mini_auth_models.py::test_narrow_definition_is_what_makes_the_rule_work PASSED [ 50%]
+tests/test_mini_auth_models.py::test_proof_file_ids_capped_at_three PASSED [ 55%]
+tests/test_mini_auth_models.py::test_no_plaintext_phone_column_in_the_live_catalogue PASSED [ 60%]
+tests/test_mini_auth_models.py::test_phone_hash_is_64_lowercase_hex PASSED [ 65%]
+tests/test_mini_auth_models.py::test_hmac_uses_the_environment_key PASSED [ 70%]
+tests/test_mini_auth_models.py::test_absent_phone_yields_null_not_empty_string PASSED [ 75%]
+tests/test_mini_auth_models.py::test_the_whole_mini_users_dump_has_no_phone_number PASSED [ 80%]
+tests/test_mini_auth_models.py::test_ten_fictional_numbers_give_ten_distinct_hashes PASSED [ 85%]
+tests/test_mini_auth_models.py::test_seed_is_deterministic_and_covers_every_status PASSED [ 90%]
+tests/test_mini_auth_models.py::test_seed_applies_into_a_migrated_database PASSED [ 95%]
+tests/test_mini_auth_models.py::test_login_events_carry_the_ticket_columns PASSED [100%]
+
+============================= 20 passed in 8.96s ==============================

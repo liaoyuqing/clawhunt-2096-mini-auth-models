@@ -1,0 +1,5 @@
+# Runtime + test dependencies. Versions are the ones the delivery was verified with.
+SQLAlchemy>=2.0.30,<2.1
+alembic>=1.13,<2
+psycopg[binary]>=3.1,<4
+pytest>=8,<10

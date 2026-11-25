@@ -1,0 +1,55 @@
+alembic round trip - real terminal output
+==============================================================
+
+Captured  : 2026-11-25T06:43:42Z
+Python    : 3.11.9
+Alembic   : alembic 1.18.4
+Database  : PostgreSQL 16.2
+Command   : see README, section "Running the migration round trip"
+
+$ alembic upgrade head
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0016_mini_auth, mini auth: mini_users, member_auth_applications, mini_login_events
+[exit code: 0]
+
+$ psql -c "SELECT typname FROM pg_type WHERE typtype = 'e'"
+enum_types = ['auth_application_status', 'auth_status', 'enterprise_role']  (count = 3)
+tables     = ['member_auth_applications', 'mini_login_events', 'mini_users']
+
+$ alembic downgrade -1
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 0016_mini_auth -> , mini auth: mini_users, member_auth_applications, mini_login_events
+[exit code: 0]
+
+$ psql -c "SELECT typname FROM pg_type WHERE typtype = 'e'"
+enum_types = []  (count = 0)
+tables     = []
+
+$ alembic upgrade head
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0016_mini_auth, mini auth: mini_users, member_auth_applications, mini_login_events
+[exit code: 0]
+
+$ psql -c "SELECT typname FROM pg_type WHERE typtype = 'e'"
+enum_types = ['auth_application_status', 'auth_status', 'enterprise_role']  (count = 3)
+tables     = ['member_auth_applications', 'mini_login_events', 'mini_users']
+
+$ alembic check
+No new upgrade operations detected.
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.schemas
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.tables
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.types
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.constraints
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.defaults
+INFO  [alembic.runtime.plugins] setting up autogenerate plugin alembic.autogenerate.comments
+[exit code: 0]
+
+$ psql -c "SELECT typname FROM pg_type WHERE typtype = 'e'"
+enum_types = ['auth_application_status', 'auth_status', 'enterprise_role']  (count = 3)
+tables     = ['member_auth_applications', 'mini_login_events', 'mini_users']
+
